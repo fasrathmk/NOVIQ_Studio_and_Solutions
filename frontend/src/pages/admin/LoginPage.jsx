@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useNavigate } from 'react-router-dom';
 import { authApi } from '../../api/admin';
 import { loginSchema } from '../../schemas/auth';
-import { getApiErrorMessage } from '../../api/client';
+import { getApiBaseUrl, getApiErrorMessage } from '../../api/client';
 import { useAuth } from '../../features/auth/AuthContext';
 import Seo from '../../components/common/Seo';
 import Logo from '../../components/common/Logo';
@@ -13,6 +13,7 @@ export default function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState('');
+  const apiAvailable = Boolean(getApiBaseUrl());
   const {
     register,
     handleSubmit,
@@ -27,6 +28,10 @@ export default function LoginPage() {
           className="card w-full max-w-md p-8"
           onSubmit={handleSubmit(async (values) => {
             setError('');
+            if (!getApiBaseUrl()) {
+              setError('Admin sign-in requires the local Spring Boot API.');
+              return;
+            }
             try {
               const response = await authApi.login(values);
               login(response.accessToken, response.admin);
@@ -46,6 +51,7 @@ export default function LoginPage() {
           </div>
           <h1 className="font-display text-3xl">Administrator sign in</h1>
           <p className="mt-2 text-sm text-ink-muted">There is no public registration. Only the configured administrator can sign in.</p>
+          <p className="mt-2 text-sm text-ink-muted">Admin sign-in requires the local Spring Boot API. It is not available on the public Vercel site.</p>
           <label className="label mt-6">Email</label>
           <input className="input" type="email" {...register('email')} />
           {errors.email ? <p className="field-error">{errors.email.message}</p> : null}
@@ -53,7 +59,7 @@ export default function LoginPage() {
           <input className="input" type="password" {...register('password')} />
           {errors.password ? <p className="field-error">{errors.password.message}</p> : null}
           {error ? <p className="field-error">{error}</p> : null}
-          <button type="submit" className="btn-primary mt-6 w-full" disabled={isSubmitting}>
+          <button type="submit" className="btn-primary mt-6 w-full" disabled={isSubmitting || !apiAvailable}>
             {isSubmitting ? 'Signing in…' : 'Sign in'}
           </button>
         </form>

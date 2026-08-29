@@ -88,9 +88,10 @@ copy .env.example .env
 ```env
 VITE_API_BASE_URL=http://localhost:8080/api/v1
 VITE_SITE_URL=http://localhost:5173
+VITE_WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
 ```
 
-Do not commit real `.env` files.
+`VITE_API_BASE_URL` is for local development (and a future production backend). The public Vercel site must not point at `localhost`. `VITE_WEB3FORMS_ACCESS_KEY` is required for the public enquiry form. Do not commit real `.env` files or the real Web3Forms access key.
 
 ## Backend startup
 
@@ -161,6 +162,25 @@ npm run build
 - **`.env` not applied:** start Maven from the `backend` directory. If `DB_PASSWORD` contains characters such as `&`, export the variables in your shell before `.\mvnw.cmd spring-boot:run`.
 - **Port already in use:** stop the process on `8080` or `5173`.
 
-## Future deployment notes
+## Public deployment (Vercel frontend only)
 
-This project is intended to run locally. Deployment configuration (Docker, Vercel, Railway, Neon, Kubernetes) is intentionally omitted. When deploying later, replace local environment variables, use a managed PostgreSQL instance, rotate `JWT_SECRET` and `ADMIN_PASSWORD`, and serve the frontend production build from a static host or reverse proxy in front of the Spring Boot API.
+Current public architecture:
+
+```
+Visitor → Vercel → React → Web3Forms → NOVIQ email
+```
+
+The Spring Boot backend stays local. Neon PostgreSQL stays connected only to that local backend (and a future production backend). Do not put database credentials in frontend environment variables.
+
+Vercel project settings:
+
+- Root directory: `frontend`
+- Framework: Vite
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
+- Environment variable: `VITE_WEB3FORMS_ACCESS_KEY` (available at build time)
+
+Do not set `VITE_API_BASE_URL` on Vercel until a production backend exists. Do not deploy the backend to Railway, Render, or Docker for this temporary setup.
+
+Admin CRUD remains in the codebase and requires the local Spring Boot API at `http://localhost:8080`.

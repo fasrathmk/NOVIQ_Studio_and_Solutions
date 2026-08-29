@@ -31,5 +31,12 @@ export function formatDate(value) {
 }
 
 export function siteUrl() {
-  return import.meta.env.VITE_SITE_URL || 'http://localhost:5173';
+  const configured = import.meta.env.VITE_SITE_URL?.trim();
+  if (configured && !(import.meta.env.PROD && configured.includes('localhost'))) {
+    return configured.replace(/\/$/, '');
+  }
+  if (typeof window !== 'undefined' && window.location?.origin) {
+    return window.location.origin;
+  }
+  return configured?.replace(/\/$/, '') || 'http://localhost:5173';
 }

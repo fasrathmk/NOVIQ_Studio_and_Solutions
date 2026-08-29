@@ -11,8 +11,11 @@ vi.mock('../../api/public', () => ({
     getServices: vi.fn().mockResolvedValue([
       { slug: 'web-application-development', title: 'Web Application Development' },
     ]),
-    createInquiry: vi.fn(),
   },
+}));
+
+vi.mock('../../api/web3forms', () => ({
+  submitInquiry: vi.fn(),
 }));
 
 function renderContact() {

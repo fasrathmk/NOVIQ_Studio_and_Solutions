@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { publicApi } from '../../api/public';
+import { submitInquiry } from '../../api/web3forms';
 import { contactSchema } from '../../schemas/contact';
 import { BUDGET_OPTIONS } from '../../utils/constants';
 import { getApiErrorMessage } from '../../api/client';
@@ -33,7 +34,7 @@ export default function ContactPage() {
   });
 
   const mutation = useMutation({
-    mutationFn: publicApi.createInquiry,
+    mutationFn: submitInquiry,
     onSuccess: (data) => {
       toast.push(data.message || 'Your inquiry has been received.');
       reset();

@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { authApi } from '../../api/admin';
+import { getApiBaseUrl } from '../../api/client';
 
 const AuthContext = createContext(null);
 const TOKEN_KEY = 'noviq_access_token';
@@ -12,7 +13,7 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     let cancelled = false;
     async function load() {
-      if (!token) {
+      if (!token || !getApiBaseUrl()) {
         setAdmin(null);
         setLoading(false);
         return;
@@ -52,10 +53,12 @@ export function AuthProvider({ children }) {
         setAdmin(profile);
       },
       logout: async () => {
-        try {
-          await authApi.logout();
-        } catch {
-          // Client-side logout still proceeds if the token has already expired.
+        if (getApiBaseUrl()) {
+          try {
+            await authApi.logout();
+          } catch {
+            // Client-side logout still proceeds if the token has already expired.
+          }
         }
         localStorage.removeItem(TOKEN_KEY);
         setToken(null);

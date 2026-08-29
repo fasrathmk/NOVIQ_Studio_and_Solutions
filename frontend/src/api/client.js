@@ -1,7 +1,25 @@
 import axios from 'axios';
 
+export function getApiBaseUrl() {
+  const configured = import.meta.env.VITE_API_BASE_URL?.trim();
+  if (configured) {
+    if (import.meta.env.PROD && configured.includes('localhost')) {
+      return '';
+    }
+    return configured;
+  }
+  if (import.meta.env.DEV) {
+    return 'http://localhost:8080/api/v1';
+  }
+  return '';
+}
+
+export function isPublicApiEnabled() {
+  return Boolean(getApiBaseUrl());
+}
+
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api/v1',
+  baseURL: getApiBaseUrl() || undefined,
   headers: { 'Content-Type': 'application/json' },
 });
 
@@ -30,6 +48,9 @@ api.interceptors.response.use(
 );
 
 export function getApiErrorMessage(error, fallback = 'Something went wrong. Please try again.') {
+  if (error?.message && !error.response) {
+    return error.message;
+  }
   const data = error?.response?.data;
   if (!data) {
     return fallback;
