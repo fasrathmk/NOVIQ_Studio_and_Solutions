@@ -1,0 +1,9 @@
+noviq:
+  jwt:
+    secret: test-jwt-secret-must-be-at-least-thirty-two-chars
+    expiration-ms: 3600000
+  cors:
+    origin: http://localhost:5173
+  admin:
+    email: admin@noviq.local
+    password: test-admin-password

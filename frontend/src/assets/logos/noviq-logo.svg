@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 721.29 260.37">
+  <defs>
+    <style>
+      .cls-1 {
+        letter-spacing: .16em;
+      }
+
+      .cls-2 {
+        letter-spacing: .2em;
+      }
+
+      .cls-3 {
+        letter-spacing: .2em;
+      }
+
+      .cls-4 {
+        stroke-width: 10.27px;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+        fill: none;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-4, .cls-5, .cls-6, .cls-7, .cls-9, .cls-10 {
+        stroke: #60605d;
+      }
+
+      .cls-5 {
+        stroke-width: 2.67px;
+      }
+
+      .cls-11 {
+        letter-spacing: .21em;
+      }
+
+      .cls-6 {
+        stroke-width: 2.63px;
+      }
+
+      .cls-7 {
+        stroke-width: 2.54px;
+      }
+
+      .cls-8 {
+        opacity: .2;
+        stroke: #231f20;
+        stroke-width: .92px;
+      }
+
+      .cls-12 {
+        letter-spacing: .21em;
+      }
+
+      .cls-13 {
+        letter-spacing: .2em;
+      }
+
+      .cls-9 {
+        stroke-width: 2.54px;
+      }
+
+      .cls-14 {
+        letter-spacing: .2em;
+      }
+
+      .cls-10 {
+        stroke-width: 2.72px;
+      }
+
+      .cls-15 {
+        letter-spacing: .21em;
+      }
+
+      .cls-16 {
+        letter-spacing: .2em;
+      }
+
+      .cls-17 {
+        letter-spacing: .23em;
+      }
+
+      .cls-18 {
+        fill: #60605d;
+        font-family: MinionConceptRoman-Medium, 'Minion Variable Concept';
+        font-size: 28.35px;
+        font-variation-settings: 'wght' 500, 'opsz' 11;
+        font-weight: 500;
+      }
+
+      .cls-19 {
+        letter-spacing: .2em;
+      }
+
+      .cls-20 {
+        letter-spacing: .21em;
+      }
+    </style>
+  </defs>
+  <g>
+    <line class="cls-8" x1="33.47" x2="33.47" y2="260.04"/>
+    <line class="cls-8" x1=".32" y1="230.64" x2="250.42" y2="230.64"/>
+    <line class="cls-8" x1=".32" y1="36.01" x2="250.42" y2="36.01"/>
+    <line class="cls-8" x1="222.37" x2="222.37" y2="260.04"/>
+    <line class="cls-8" x1="3.26" y1="5.75" x2="250.04" y2="260.04"/>
+    <line class="cls-8" x1=".32" y1="81.48" x2="185.62" y2="260.04"/>
+    <g>
+      <polyline class="cls-4" points="33.47 230.64 33.47 111.31 86.32 162.29"/>
+      <polyline class="cls-4" points="33.47 66.13 33.47 36.01 221.83 230.64 221.83 36.01"/>
+    </g>
+  </g>
+  <g>
+    <polyline class="cls-6" points="391.28 68.44 391.28 146.48 319.02 71.81 319.02 83.36 319.02 100.7 319.02 149.65"/>
+    <circle class="cls-9" cx="453.65" cy="107.8" r="39.36"/>
+    <polyline class="cls-5" points="516.8 68.18 552.93 145.16 589.06 68.18"/>
+    <line class="cls-10" x1="612.41" y1="68.44" x2="612.41" y2="149.65"/>
+    <g>
+      <circle class="cls-7" cx="675.13" cy="109.11" r="39.36"/>
+      <polyline class="cls-7" points="719.67 146.71 720.38 147.44 690.89 116.97"/>
+    </g>
+    <text class="cls-18" transform="translate(319.02 202.49)"><tspan class="cls-16" x="0" y="0">S</tspan><tspan class="cls-15" x="19.62" y="0">T</tspan><tspan class="cls-14" x="43.68" y="0">U</tspan><tspan class="cls-3" x="70.24" y="0">DI</tspan><tspan class="cls-13" x="113.41" y="0">O &amp; </tspan><tspan class="cls-11" x="191.68" y="0">S</tspan><tspan class="cls-12" x="211.78" y="0">O</tspan><tspan class="cls-1" x="239.07" y="0">L</tspan><tspan class="cls-17" x="259.82" y="0">U</tspan><tspan class="cls-20" x="287.09" y="0">T</tspan><tspan class="cls-3" x="310.96" y="0">IO</tspan><tspan class="cls-2" x="354.36" y="0">N</tspan><tspan class="cls-19" x="381.51" y="0">S</tspan></text>
+  </g>
+</svg>

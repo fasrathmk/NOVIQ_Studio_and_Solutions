@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream-100 text-ink antialiased;
+    font-family: Outfit, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-noviq;
+  }
+
+  ::selection {
+    @apply bg-noviq text-white;
+  }
+}
+
+@layer components {
+  .container-noviq {
+    @apply mx-auto w-full max-w-container px-5 sm:px-8;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-wide px-5 sm:px-8;
+  }
+
+  .section {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.22em] text-noviq;
+  }
+
+  .display {
+    @apply font-display text-display font-semibold text-ink;
+  }
+
+  .heading {
+    @apply font-display text-heading font-semibold text-ink;
+  }
+
+  .lede {
+    @apply max-w-2xl text-lg leading-relaxed text-ink-muted;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill px-5 py-3 text-sm font-semibold transition duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply btn bg-noviq text-white hover:bg-noviq-dark;
+  }
+
+  .btn-secondary {
+    @apply btn border border-ink/15 bg-transparent text-ink hover:border-ink hover:bg-ink hover:text-cream-100;
+  }
+
+  .btn-ghost {
+    @apply btn border border-transparent text-ink hover:bg-cream-200;
+  }
+
+  .btn-dark {
+    @apply btn bg-ink text-cream-100 hover:bg-black;
+  }
+
+  .card {
+    @apply rounded-card border border-cream-300 bg-cream-50 shadow-soft;
+  }
+
+  .input {
+    @apply w-full rounded-xl border border-cream-300 bg-white px-4 py-3 text-sm text-ink transition placeholder:text-ink-soft focus:border-noviq;
+  }
+
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+
+  .field-error {
+    @apply mt-1.5 text-sm text-red-700;
+  }
+
+  .admin-table-wrap {
+    @apply overflow-x-auto rounded-card border border-cream-300;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

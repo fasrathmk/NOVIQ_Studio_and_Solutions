@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>http://localhost:5173/</loc></url>
+  <url><loc>http://localhost:5173/services</loc></url>
+  <url><loc>http://localhost:5173/services/logo-design-brand-identity</loc></url>
+  <url><loc>http://localhost:5173/services/ui-ux-design</loc></url>
+  <url><loc>http://localhost:5173/services/web-application-development</loc></url>
+  <url><loc>http://localhost:5173/services/business-automation</loc></url>
+  <url><loc>http://localhost:5173/services/business-analysis</loc></url>
+  <url><loc>http://localhost:5173/services/3d-landscape-design</loc></url>
+  <url><loc>http://localhost:5173/work</loc></url>
+  <url><loc>http://localhost:5173/about</loc></url>
+  <url><loc>http://localhost:5173/contact</loc></url>
+  <url><loc>http://localhost:5173/privacy-policy</loc></url>
+  <url><loc>http://localhost:5173/terms</loc></url>
+</urlset>
